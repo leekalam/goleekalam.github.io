@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>franklychat</title>
+</head>
+<style>
+	
+	body{
+		
+		
+		height:100vh;
+		display:flex;
+		justify-content: center;
+		align-items:center;
+		background-color:#efefef;
+		
+	}
+	
+	.bs{
+		width:100vw;
+		max-width:1200px;
+		height:650px;
+		background-color:#fff;
+		border-radius:25px;
+		box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+		position:relative;
+	}
+	.chats{
+		position:absolute;
+		border: 2px solid #ccc; 
+		border-radius: 25px;
+		width:900px;
+		height:636px;
+		right:5px;
+		top:5px;
+	}
+	.contacts{
+		position:absolute;
+		border: 2px solid #ccc;
+		border-radius:25px;
+		width:270px;
+		height:636px;
+		left:5px;
+		top:5px; 
+	
+}
+
+	.name{
+		position:absolute;
+		top:5px;
+		left:50%;
+		font-size: 25px;	
+	}
+	
+	*{margin:0px auto; padding:0px;}
+.aa{ width:200px; height:250px;}
+.ss{ width:200px; height:50px; background-color:white; color:#000000;
+		border: 2px solid #ccc;
+	    border-radius:25px;
+		box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+text-align:center; line-height:50px; vertical-align:middle; margin-top:5px}
+.ss:hover{ background-color:#008CBA !important; color:#fff !important; cursor:pointer;}
+	.txtarea{
+
+		
+		  position: relative; /* 修改为相对定位 */
+    width: 860px;
+    height: 520px;
+    border: 2px solid #ccc;
+    overflow-y: auto; /* 添加垂直滚动条 */
+    padding: 10px; /* 添加内边距 */
+		top:50px;
+	}
+	.l{
+		
+		
+
+		  padding: 10px;
+  
+    border-radius: 25px;
+    margin-top: 5px;
+    width: auto; /* 让宽度自动调整 */
+	
+
+		
+	}
+	
+	
+	.c{
+
+		background-color: gainsboro;
+		display:inline-block;
+		border-radius: 25px;
+      margin-top: 5px;
+		padding:7px;
+		
+	}
+	.r{
+		float:right;
+	}
+	
+	.state{
+		position:absolute;
+		width:600px;
+		height:30px;
+		bottom:7px;
+		left:190px;
+		font-size:20px;
+		
+		
+	}
+	</style>
+	
+<body>
+
+	<div class="bs">
+	<div class="chats">
+		<div class="state">
+		Youre viewing someone else's chat list, So you cannot type!
+		</div>
+		<div class="txtarea">
+
+	
+
+		
+		
+		
+		
+		</div>
+		
+		
+		
+		
+		
+
+		<div class="name">Name</div>
+		
+		</div>
+	<div class="contacts">
+    <div class="aa">
+        <div class="ss">Lily</div>
+		<div class="ss">Louis</div>
+    </div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript">
+
+		
+		   var ss = document.getElementsByClassName("ss");
+    var nameElement = document.querySelector(".name");
+
+    for (var i = 0; i < ss.length; i++) {
+        ss[i].onclick = function() {
+            // 首先重置所有名字按钮的样式
+            for (var j = 0; j < ss.length; j++) {
+                ss[j].style.backgroundColor = "white";
+                ss[j].style.color = "#000000";
+            }
+
+            // 设置当前点击按钮的样式
+            this.style.backgroundColor = "#008CBA";
+            this.style.color = "#fff";
+
+            // 获取点击按钮的文本内容（即名字）
+            var selectedName = this.textContent.trim();
+
+            // 将名字设置为"Name"标签的内容
+            nameElement.textContent = selectedName;
+        }
+    }
+ // 定义一个对象存储每个人名对应的预设内容，包括HTML标签
+    var presetContent = {
+        "Lily": `<div class="r"><div class="c">louis just said he cannot come tonight. so its gonna be just you and me tonight!! :-)</div></div>
+                 <div class="l"><div class="c">Oh....that's a pity he cannot come </div></div>`,
+        "Louis": `<div class="l"><div class="c">hey louis can you tell lily that ill be late for tonight party?</div></div>
+                  <div class="r"><div class="c">dont worry dude ill tell her.</div></div>
+              `
+    };
+
+    var ss = document.getElementsByClassName("ss");
+    var txtarea = document.querySelector(".txtarea");
+
+    for (var i = 0; i < ss.length; i++) {
+        ss[i].onclick = function() {
+            // 首先重置所有名字按钮的样式
+            for (var j = 0; j < ss.length; j++) {
+                ss[j].style.backgroundColor = "white";
+                ss[j].style.color = "#000000";
+            }
+
+            // 设置当前点击按钮的样式
+            this.style.backgroundColor = "#008CBA";
+            this.style.color = "#fff";
+
+            // 获取点击按钮的文本内容（即名字）
+            var selectedName = this.textContent.trim();
+
+            // 将名字设置为"Name"标签的内容
+            nameElement.textContent = selectedName;
+
+            // 检查是否存在预设内容，如果存在则加载到.txtarea中
+            if (presetContent[selectedName]) {
+                txtarea.innerHTML = presetContent[selectedName];
+            } else {
+                txtarea.innerHTML = ""; // 清空.txtarea内容
+            }
+        }
+    }
+
+    window.onload = function() {
+        // 默认选中第一个人名（你可以根据需要修改为选中第二个人名）
+        ss[1].click();
+    };
+
+</script>
+</html>

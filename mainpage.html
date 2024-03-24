@@ -1,0 +1,447 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>franklychat</title>
+</head>
+<style>
+	
+	body{
+		
+		
+		height:100vh;
+		display:flex;
+		justify-content: center;
+		align-items:center;
+		background-color:#efefef;
+		
+	}
+	
+	.bs{
+		width:100vw;
+		max-width:1200px;
+		height:650px;
+		background-color:#fff;
+		border-radius:25px;
+		box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+		position:relative;
+	}
+	.chats{
+		position:absolute;
+		border: 2px solid #ccc; 
+		border-radius: 25px;
+		width:900px;
+		height:636px;
+		right:5px;
+		top:5px;
+	}
+	.contacts{
+		position:absolute;
+		border: 2px solid #ccc;
+		border-radius:25px;
+		width:270px;
+		height:636px;
+		left:5px;
+		top:5px; 
+	
+}
+	.msg{
+		border-radius:30px;
+	    width:720px;
+		height:44px;
+		position:absolute;
+		bottom:10px;
+		left:16px;
+	}
+	.send{
+  position:absolute;
+  bottom:3px;
+  right:28px;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  border-radius:20px;
+		
+	}
+	.send:hover {
+  background-color: #008CBA;
+  color: white;
+}
+	.name{
+		position:absolute;
+		top:5px;
+		left:50%;
+		font-size: 25px;	
+	}
+	
+	*{margin:0px auto; padding:0px;}
+.aa{ width:200px; height:250px;}
+.ss{ width:200px; height:50px; background-color:white; color:#000000;
+		border: 2px solid #ccc;
+	    border-radius:25px;
+		box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+text-align:center; line-height:50px; vertical-align:middle; margin-top:5px}
+.ss:hover{ background-color:#008CBA !important; color:#fff !important; cursor:pointer;}
+	.txtarea{
+		/*position:absolute;
+		width:894px;
+		height:515px;
+		top:50px;
+		left:1px;
+		border: 2px solid #ccc;/*tempe*/	
+  /* display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; /* 从左侧对齐 */ 
+   
+		
+		/*position: absolute;
+    width: 894px;
+    height: 515px;
+    top: 50px;
+    left: 1px;
+    border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; /* 从顶部开始垂直排列 */
+		
+		
+		    /*position: absolute;
+    width: 894px;
+    height: 515px;
+    top: 50px;
+    left: 1px;
+    border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
+		
+		   /* position: absolute;
+    width: 894px;
+    height: 515px;
+    top: 50px;
+    left: 1px;
+    border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;*/
+		
+		  position: relative; /* 修改为相对定位 */
+    width: 860px;
+    height: 499px;
+    border: 2px solid #ccc;
+    overflow-y: auto; /* 添加垂直滚动条 */
+    padding: 10px; /* 添加内边距 */
+		top:50px;
+	}
+	.l{
+		
+		
+		/*padding:10px;
+		background-color:gainsboro;
+	   display:block;
+		border-radius:25px;
+		margin-top:5px*/
+		    
+		
+		
+		
+		/*padding: 10px;
+    background-color: gainsboro;
+    display: inline-block;
+    border-radius: 25px;
+    margin-top: 5px;
+    height: auto; /* 设置高度为自动 */
+	
+		
+   /*padding: 10px;
+    background-color: gainsboro;
+    border-radius: 25px;
+    margin-top: 5px;*/
+		   
+		
+		
+		/*padding: 10px;
+    background-color: gainsboro;
+    border-radius: 25px;
+    margin-top: 5px;
+    width: 100%; /* 让 .l 占据整个父容器的宽度 */
+   /* align-self: flex-start;  */
+		
+		  
+		
+		/*padding: 10px;
+    background-color: gainsboro;
+    border-radius: 25px;
+    margin-top: 5px;
+    align-self: flex-start;
+		position: relative; */
+		  padding: 10px;
+  
+    border-radius: 25px;
+    margin-top: 5px;
+    width: auto; /* 让宽度自动调整 */
+	
+
+		
+	}
+	
+	
+	.c{
+
+		background-color: gainsboro;
+		display:inline-block;
+		border-radius: 25px;
+      margin-top: 5px;
+		padding:7px;
+		
+	}
+	.r{
+		float:right;
+	}
+	
+	
+	   .custom-menu {
+        width: 120px; /* 设置菜单宽度 */
+        padding: 5px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        font-size: 14px;
+    }
+
+    .custom-menu button {
+        width: 100%;
+        padding: 8px 10px;
+        border: none;
+        background-color: #f0f0f0;
+        cursor: pointer;
+        margin-bottom: 5px; /* 调整菜单项之间的间距 */
+    }
+
+    .custom-menu button:hover {
+        background-color: #e0e0e0;
+    }
+	
+	</style>
+	
+<body>
+
+	<div class="bs">
+	<div class="chats">
+		<div class="txtarea">
+
+		
+		
+		
+		
+		</div>
+		
+		
+		
+		
+		
+		<div class="msgarea">
+		<form>
+			<input type="text" name="msg" class="msg">
+		</form>
+			<button class="send">Send</button>
+		</div>
+		<div class="name">Name</div>
+		
+		</div>
+	<div class="contacts">
+    <div class="aa">
+        <div class="ss">James</div>
+		<div class="ss">Peter</div>
+    </div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript">
+// var ss = document.getElementsByClassName("ss")
+ //  for(var i=0;i<ss.length;i++)
+ //  {
+   //    ss[i].onclick = function()
+  //     {
+    //    for(var i=0;i<ss.length;i++)
+     //    {
+     //      ss[i].style.backgroundColor = "white";
+   //        ss[i].style.color = "#000000";
+   //    }
+     //  this.style.backgroundColor = "#008CBA";
+   //    this.style.color = "#fff";
+   //    }
+ //  }
+		
+		   var ss = document.getElementsByClassName("ss");
+    var nameElement = document.querySelector(".name");
+
+    for (var i = 0; i < ss.length; i++) {
+        ss[i].onclick = function() {
+            // 首先重置所有名字按钮的样式
+            for (var j = 0; j < ss.length; j++) {
+                ss[j].style.backgroundColor = "white";
+                ss[j].style.color = "#000000";
+            }
+
+            // 设置当前点击按钮的样式
+            this.style.backgroundColor = "#008CBA";
+            this.style.color = "#fff";
+
+            // 获取点击按钮的文本内容（即名字）
+            var selectedName = this.textContent.trim();
+
+            // 将名字设置为"Name"标签的内容
+            nameElement.textContent = selectedName;
+        }
+    }
+		
+		  document.querySelector(".send").addEventListener("click", function() {
+    // 获取.msg中的内容
+    var message = document.querySelector(".msg").value;
+
+    // 创建一个新的HTML结构，将.msg中的内容插入到其中
+    var newMessageElement = document.createElement("div");
+    newMessageElement.classList.add("l");
+    newMessageElement.innerHTML = '<div class="r"><div class="c">' + message + '</div></div>';
+
+    // 将新的HTML结构添加到.txtarea中
+    var txtarea = document.querySelector(".txtarea");
+    txtarea.appendChild(newMessageElement);
+
+    // 清空.msg中的内容
+    document.querySelector(".msg").value = '';
+
+    // 3秒后在.txtarea中另起一行插入内容
+    setTimeout(function() {
+        var br = document.createElement("br");
+        txtarea.appendChild(br);
+
+        var newLine = document.createElement("div");
+        newLine.classList.add("l");
+        newLine.innerHTML = '<div class="l"><div class="c">dont worry dude ill tell her.</div></div>';
+        txtarea.appendChild(newLine);
+    }, 3000);
+});
+
+		
+		
+		
+		
+		
+		
+		
+		/* document.querySelector(".send").addEventListener("click", function() {
+        // 获取.msg中的内容
+        var message = document.querySelector(".msg").value;
+
+        // 创建一个新的HTML结构
+        var newMessageElement = document.createElement("div");
+        newMessageElement.classList.add("l");
+        newMessageElement.innerHTML = '<div class="r"><div class="c">' + message + '</div></div>';
+
+        // 将新的HTML结构插入到.txtarea中，另起一行
+        var txtarea = document.querySelector(".txtarea");
+        txtarea.appendChild(document.createElement("br"));
+        txtarea.appendChild(newMessageElement);
+
+        // 清空.msg中的内容
+        document.querySelector(".msg").value = '';
+    });*/
+		/*  document.querySelector(".send").addEventListener("click", function() {
+        // 获取.msg中的内容
+        var message = document.querySelector(".msg").value;
+
+        // 创建一个新的HTML结构，将.msg中的内容插入到其中
+        var newMessageElement = document.createElement("div");
+        newMessageElement.classList.add("l");
+        newMessageElement.innerHTML = '<div class="r"><div class="c">' + message + '</div></div>';
+
+        // 将新的HTML结构添加到.txtarea中
+        var txtarea = document.querySelector(".txtarea");
+        txtarea.appendChild(newMessageElement);
+			  document.querySelector(".msg").value = '';
+    });
+		*/
+		
+   /* document.addEventListener("contextmenu", function(event) {
+        if (event.target.classList.contains("ss")) { // 只在鼠标箭头在.ss上右键时弹出菜单
+            event.preventDefault();
+
+            var mouseX = event.pageX;
+            var mouseY = event.pageY;
+
+            var customMenu = document.createElement("div");
+            customMenu.classList.add("custom-menu");
+            customMenu.style.position = "absolute";
+            customMenu.style.left = mouseX + "px";
+            customMenu.style.top = mouseY + "px";
+
+            var menuItem = document.createElement("button");
+            menuItem.textContent = "View his chat list";
+            menuItem.addEventListener("click", function() {
+                alert("点击了菜单项！");
+                document.body.removeChild(customMenu);
+            });
+            customMenu.appendChild(menuItem);
+
+            document.body.appendChild(customMenu);
+
+            document.addEventListener("click", function(event) {
+                if (!customMenu.contains(event.target) && event.target !== event.target.classList.contains("ss")) {
+                    document.body.removeChild(customMenu);
+                }
+            });
+        }
+    });
+	*/
+		    document.addEventListener("contextmenu", function(event) {
+        if (event.target.classList.contains("ss")) { // 只在鼠标箭头在.ss上右键时弹出菜单
+            event.preventDefault();
+
+            var mouseX = event.pageX;
+            var mouseY = event.pageY;
+
+            var customMenu = document.createElement("div");
+            customMenu.classList.add("custom-menu");
+            customMenu.style.position = "absolute";
+            customMenu.style.left = mouseX + "px";
+            customMenu.style.top = mouseY + "px";
+
+            var menuItem = document.createElement("button");
+            var clickedSSName = event.target.textContent; // 获取右键点击的.ss元素的名字
+            menuItem.textContent = "view" + " " + clickedSSName + "'s chat list.'"
+            menuItem.addEventListener("click", function() {
+                //alert("你右键点击了：" + clickedSSName);
+				window.location.href = "whois/friendpage.html";
+                document.body.removeChild(customMenu);
+            });
+            customMenu.appendChild(menuItem);
+
+            document.body.appendChild(customMenu);
+
+            document.addEventListener("click", function(event) {
+                if (!customMenu.contains(event.target) && event.target !== event.target.classList.contains("ss")) {
+                    document.body.removeChild(customMenu);
+                }
+            });
+        }
+    });
+		window.onload = function() {
+    ss[1].click(); // 默认选中第二个人名
+};
+		
+</script>
+</html>
